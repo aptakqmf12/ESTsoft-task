@@ -1,0 +1,141 @@
+@import "./reset";
+@import "./common";
+
+.container{ max-width:1920px; margin:0 auto; overflow:hidden;}
+
+.header{ height:6rem;  position:absolute; left:0; top:0; width:100%; 
+    .wrap{ @include flexBetween(); height: 100%; border-bottom:0.1rem rgba(255,255,255,0.3) solid;
+        h1{ background:url("../img/main_logo.png") no-repeat; width:8.3rem; height:2.7rem;
+            a{ display: block; width: 100%; height: 100%;}
+        }
+        nav{ 
+            ul{ @include flexBetween();
+                li{ margin-left:2.0rem; }
+            }
+        }
+    }
+    &.fixed{ position:fixed; top:0; width:100%; background-color: rgba(34,202,228,0.9); border-bottom:0.1rem rgba(0,0,0,0.2) solid; z-index:10;
+        .wrap{ border-bottom:0;}
+    }
+}
+main{ 
+    .main{ padding-top:12.2rem; height: 64rem; background:url(../img/main_bg.png) no-repeat center; color:white;   box-sizing: border-box;  
+        &__title{ margin-bottom:3rem; font-size:6.0rem; font-weight: 600; text-shadow: 0.4rem 0.4rem rgba(8,171,196,0.8); letter-spacing: -0.03rem; line-height: 1;
+            span{ color:#fdff62; letter-spacing: 0;}
+        }
+        &__date{ margin-bottom:3.2rem; font-size:2.0rem; text-shadow: 0.2rem 0.2rem rgba(4,139,160,0.51);
+            span{ color:#51e8ff; letter-spacing: -0.03rem;}
+        }
+        &__content{ font-size:1.8rem; text-shadow: 0.2rem 0.2rem rgba(4,139,160,0.42); letter-spacing: -0.03rem; line-height: 1.5;
+            span{ color:#fdff62;}
+        }
+    }
+
+    .rank{ background-color: #1ad8f5; padding:3.5rem 0; color:white; font-size:3.4rem; letter-spacing: -0.23rem; line-height: 1;
+        .wrap{
+             span{ color:#fdff62;}
+        }
+    }
+
+    .post{  text-align: center;
+        .wrap{ padding:5rem; border-bottom:0.1rem #ededed solid; }
+
+        &__content{ margin-top:3.2rem; font-size:2.2rem; font-weight: 600; letter-spacing: -0.03rem; line-height: 1.5;
+            span.m{ color:$font-main;}
+            span.s{ color:$font-sub;}
+        }
+        &__chart{ display: flex; justify-content: center; align-items: center; margin-top:3.2rem;
+            &--pie01{ @include pieChart(#6481ff, 25.23%); margin-right:1.6rem;}
+            &--pie02{ @include pieChart(#1ad8f5, 75.26%); margin-left:1.6rem;}
+        }
+        &__img{ margin-top:3.2rem;}
+        &__txt{ margin-top:3.2rem; font-size:1.8rem;}
+        &__tagbox{ margin-top:2rem;
+            &--tag{ display: inline-flex; justify-content: center; align-items: center; margin-right:1rem; margin-top:1.3rem; padding:1.5rem 3.6rem;  border:0.1rem #d4dadb solid; border-radius: 5rem;;
+                &.on{ border:0.2rem #1ad8f5 solid;}
+                b{ font-size:1.8rem; padding-right: 0.5rem;
+                    &::before{ content:"#";}
+                }
+                span{ font-size:1.6rem; color:#9e9e9e;}
+            }
+        }
+        &__vallybox{ margin-top:3rem;
+            &--vally{ display: inline-flex; flex-direction: column; justify-content: center; width:21.3rem; height:20.3rem; margin-right:3.8rem; background:url(../img/vally_bg.png) no-repeat;
+                &:last-child{margin-right:0;}
+                &-idx{ margin-bottom:2.7rem; font-size:4.5rem; font-weight: 100; font-style:italic; color:#a8a8a8; line-height: 1;}
+                &-tit{ margin-bottom:1.0rem; font-size:1.8rem; color:#000; font-weight: 600; line-height: 1 }
+                &-num{ font-size:1.8rem; color:#a8a8a8; font-weight: 600;}
+                &.on{ background:url(../img/vally_bg-on.png) no-repeat;
+                    .post__vallybox--vally-idx{ color:#1ad8f5;}
+                }
+            }
+        }
+
+        &__keyword{ margin-top:3.4rem;  border-top:0.1rem #8a8a8a solid;
+            &--table{ width: 100%;
+                tr{ color:#888888;
+                    th{ padding:1.5rem 0; font-size:1.4rem;
+                        &:nth-child(2n){ text-align:left; font-weight: 600; }
+                    }
+                    td{ max-width:0; padding:1.3rem 0; text-align:center; font-size:1.8rem;
+                        &:nth-child(2n){ @include textOneLine; width:12rem;  text-align:left; font-weight: 600; color:#000;}
+                    }
+                    &.on{ border:0.2rem $font-sub solid; color:$font-sub; font-weight: 600;
+                        td{
+                            &:nth-child(2n){ color:$font-sub;}
+                        }
+                    }
+                }
+            }
+        }
+
+        &__list{ @include flexBetween; margin-top:3rem;
+            &--item{ margin-right:1rem; text-align: center; font-size:1.6rem;
+                &-thumb{ margin-bottom:1.6rem; line-height: 1; overflow: hidden; cursor: pointer;
+                    img{ transition: all .3s ease;}
+                    &:hover img{transform:scale(1.1);}
+                }
+                &-views{ margin-bottom:1.1rem; color:#9e9e9e; font-weight: 600; line-height: 1;}
+                &-content{ font-weight: 600; }
+            }
+        }
+
+        &__rank{ margin-top:3.2rem;
+            &--ranker{ @include flexBetween; margin-bottom:0.7rem; padding:1.7rem 3.4rem; border:0.1rem #e5e5e5 solid;
+                &-left{ display: flex; justify-content: flex-start; align-items: center;
+                    .idx{ margin-right:3rem; font-size:4.5rem; color:#a1a1a1;}
+                    .profile{ margin-right:1.8rem; }
+                    .name{ font-size:1.8rem;}
+                }
+                &-right{  display: flex; justify-content: flex-start; align-items: center;
+                    .views{ position:relative; font-size:1.6rem; color:#3d2626;
+                        &::before{ content:''; position:absolute; left:-1.1rem; transform:translateX(-100%); width:2.7rem; height:2.4rem; background:url('../img/ico_views.png') no-repeat;}
+                    }
+                }
+                &.on{ border:0.2rem $font-sub solid;
+                    .idx{ color:$font-sub;}
+                }
+            }
+        }
+        &:last-child{
+            .wrap{ border-bottom:0;}
+        }
+        #growPostNum, #hotMonth, #tagVally{ margin-top:5rem;}
+    }
+}
+
+.footer{ text-align: center;
+    &__top{ margin-top:5.6rem;}
+    &__content{ padding:4rem 0; background-color: $font-sub; font-size:2.2rem; font-weight: 400; color:#fff; letter-spacing: -0.03rem;
+        &--sns{ margin-top:3.4rem;
+            li{ display: inline-flex; justify-content: center; align-items: center;  margin-right:3rem; background-color: #fff; box-shadow: 0.2rem 0.2rem rgba(8,171,196,0.8) ; border-radius: 50%; 
+                &:last-child{ margin-right:0;}
+                a{ display: flex; justify-content: center; align-items: center; width:9rem; height:9rem;}
+            }
+        }
+    }
+    &__btm{ padding:2.8rem 0 7rem;
+        &--copy{ font-size:1.2rem; color:#afafaf}
+    }
+}
+

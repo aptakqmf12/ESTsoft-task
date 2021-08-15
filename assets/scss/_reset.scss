@@ -1,0 +1,78 @@
+body, p, div, span, h1, h2, h3, h4, h5, h6, ul, ol, li, dl, dt, dd, table, th, td, form, fieldset, legend, input, textarea, button, select {
+    margin: 0;
+    padding: 0;
+  }
+  
+  body, input, textarea, button, select {
+    font-family: 'AppleGothicNeoSD', 'Apple SD 산돌고딕 Neo', '맑은 고딕', 'malgun gothic',  sans-serif;
+    color: #444;
+  }
+  
+  html, body {
+    font-size: 62.5%;
+    line-height: 1.285;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    font-size: 1rem;
+  }
+  
+  input, textarea, button, select {
+    font-size: 1rem;
+  }
+  
+  img, fieldset, button {
+    border: 0;
+  }
+  
+  textarea {
+    overflow: auto;
+  }
+  
+  input[type=submit],
+  input[type=button],
+  button {
+    cursor: pointer;
+  }
+  
+  img {
+    vertical-align: top;
+  }
+  
+  address, em {
+    font-style: normal;
+  }
+  
+  table {
+    border-spacing: 0;
+    border-collapse: collapse;
+  }
+  
+  table, th, td {
+    border: none;
+  }
+  
+  caption {
+    overflow: hidden;
+    line-height: 0;
+    text-indent: -2000em;
+  }
+  
+  legend, .hidden {
+    padding: 0;
+    margin: 0;
+    overflow: hidden !important;
+    text-indent: 100%;
+    white-space: nowrap;
+    font-size: 0;
+  }
+  a{
+    color:#000;
+    text-decoration: none;
+  }
+  i {
+    font-style: normal;
+  }
+  li{
+    list-style:none;
+  }

@@ -1,0 +1,25 @@
+.wrap{max-width:902px; margin:0 auto;}
+.sr-only{position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); border: 0;}
+
+$font-main:#6481ff;
+$font-sub:#1ad8f5;
+$graph-main:#6481ff;
+$graph-sub:#34cde3;
+$graph-gray:#d5eaed;
+
+@mixin pieChart($chart-color, $percent){ position:relative; width:23rem; height:23rem; background:conic-gradient($chart-color 0%, $chart-color  $percent, transparent  $percent, transparent 100%); border-radius: 50%;
+    &::before{ content:''; position:absolute;  left:0; width:23rem; height:23rem; background:conic-gradient(#e8e8e8 0%, #e8e8e8 100%, transparent 100%, transparent 100%); border-radius: 50%; z-index: -1;}
+    .center, .content{ position:absolute; left:50%; top:50%; transform:translate(-50%, -50%); }
+    .center{ width:22rem; height:22rem; background-color: #fff; border-radius: 50%; z-index:1; }
+    .content{ text-align:center; font-size:3.2rem; color:$chart-color; z-index:2;
+        img{margin-bottom:1rem;}
+    }
+}
+
+@mixin flexBetween(){
+    display: flex; justify-content: space-between; align-items: center;
+}
+
+@mixin textOneLine(){
+    white-space: nowrap; text-overflow: ellipsis; overflow: hidden;
+}
