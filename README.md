@@ -7,11 +7,11 @@
 
 ## 채용결과
 - 탈락.. 
-- 사유는 chart.js의 미숙
+- 사유는 chart.js의 버전미스(IE지원 실패)
 - 좋은 경험이었고 퍼블리셔로써의 마지막 채용지원.
 
 ## 기술스택
 - HTML5
 - CSS3 (scss)
 - jquery
-- chart.js (처음사용)
+- chart.js
